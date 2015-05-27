@@ -34,6 +34,9 @@ var onLoad = function () {
 			'Mission: Find the bone and bring it back to the doghouse.');
 	// Add drag listeners
 	initPaletteArrays();
+ 	document.addEventListener('mousedown', handleMouseDown, false);        
+    document.addEventListener('mousemove', handleMouseMove, false);
+    document.addEventListener('mouseup', handleMouseUp, false);  
 	document.addEventListener('touchstart', handleTouchStart, false);        
 	document.addEventListener('touchmove', handleTouchMove, false);
 	document.addEventListener('touchend', handleTouchEnd, false);
@@ -570,6 +573,26 @@ var initPaletteArrays = function () {
 	];
 	// TODO: initialize trick divs
 };
+
+var handleMouseDown = function (event) {
+    console.log('triggered');
+    event.touches = [{clientX: event.clientX, clientY: event.clientY}];
+    //handleTouchStart(event);
+    checkPaletteTouchStart(event.target, event.clientX, event.clientY);
+}
+
+var handleMouseMove = function (event) {
+    event.touches = [{clientX: event.clientX, clientY: event.clientY}];
+    //handleTouchMove(event);
+    checkPaletteTouchMove(event.target, event.clientX, event.clientY);
+
+}
+
+var handleMouseUp = function (event) {
+    event.touches = [{clientX: event.clientX, clientY: event.clientY}];
+    //handleTouchEnd(event);
+    checkPaletteTouchEnd(event.target, event.clientX, event.clientY);    
+}
 
 var handleTouchStart = function (event) {
 	var target = event.target;

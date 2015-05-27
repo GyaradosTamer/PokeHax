@@ -1,28 +1,6 @@
 body {
 	background-image: url('http://www.favoritefabric.com/fabricm_images/MKWOOFBONEBRN.jpg');
-    background-position: 0px 40px;
-    background-size: 100%;
-}
-
-.grid-cell {
-    -webkit-box-sizing: border-box;
-    border: 1px #197319 solid;
-    float: left;
-}
-
-.cell-item {
-    width: 100%;
-}
-
-#grid-parent {
-    height: 500px;
-}
-#grid {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 3px solid #49311c;
-    border-radius: 5px;
+	background-size: 100%;
 }
 #grid div {
     width: 20%;
@@ -70,33 +48,14 @@ body {
 }
 
 #console {
-    position: relative;
-    border: 3px solid #49311c;
-    border-radius: 4px;
-    width: 75%;
-    height: 125px;
-    margin: 0px auto;
-    padding: 15px;
-    background-color: #fff;
-    font-size: 24pt;
-}
-
-#description {
-    position: absolute;
-    width: 55%;
-    left: 5px;
-}
-
-#dog-head {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-
-#game-misc {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
+	border: 3px solid #49311c;
+	border-radius: 4px;
+	width: 75%;
+	height: 125px;
+	margin: 0px auto;
+	padding: 15px;
+	background-color: #fff;
+	font-size: 24pt;
 }
 
 #console.code {
@@ -145,7 +104,7 @@ body {
 	width: 70%;
 	height: 230px;
 	font-size: 24pt;
-	margin: 63% auto;
+	margin: 50% auto;
 }
 
 #train_arrow{
