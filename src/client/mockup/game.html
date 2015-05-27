@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bone Hunt</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/game.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+  </script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.js"></script>
+
+    <script src="../js/lib/jquery.spritely-0.4.js"></script>
+  <script src="../js/GameDrawingUtil.js"></script>
+  <script src="../js/GridGame.js"></script>
+  <script src="../js/Code.js"></script>
+
+</head>
+<body>
+<div id="nav_menu">
+  <a type="button" class="btn btn-default" href="./index.html">
+    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+  </a>
+  <a type="button" class="btn btn-default" href="./levelselect.html">
+    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+  </a>
+</div>
+<!-- grid div classes:
+  bone
+  left wall
+  right wall
+  top wall
+  bottom wall
+ -->
+ <div id="grid-parent">
+  <div id="grid">
+<!--     <div></div>
+    <div id="3" class="bottom-wall right-wall"></div>
+    <div id="2" class="bone"></div>
+    <div id="1"></div>
+    <div id="0"><img class="dog" src="http://images.onlinelabels.com/images/clip-art/molumen/molumen_happy_running_dog.png"/></div>
+    <div class="bone bottom-wall"></div>
+    <div class="right-wall"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="bone left-wall"></div>
+    <div></div>
+    <div></div>
+    <div class="bone"></div>
+    <div class="top-wall"></div>
+    <div class="top-wall"></div>
+    <div></div>
+    <div class="top-wall"></div>
+    <div class="right-wall"></div>
+    <div></div>
+    <div></div>
+    <div class="bone left-wall"></div> -->
+  </div>
+  </div>
+  <div id="dog" style="display:none"></div>
+
+  <div id="game-misc">
+    <div id="console">
+      <span id="description">
+        Help me collect all the bones!
+      </span>
+      <div class="dog-face-box"><img class="dog-face" src="http://www.howtodrawguide.com/wp-content/uploads/image/how-to-draw-animals/how-to-draw-a-dog/1.jpg"/>
+      </div>
+    </div>
+
+    <div id="btn-box">
+      <button type="button" class="btn play-button" data-toggle="modal" data-target="#msgModal">Play</button>
+      <a class="btn" href="./editor.html">Train</a>
+    </div>
+  </div>
+  
+
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      I don't know what to do yet! <div class="dog-face-box"><img class="dog-face" src="http://www.howtodrawguide.com/wp-content/uploads/image/how-to-draw-animals/how-to-draw-a-dog/1.jpg"/></div>
+      Tell me what to do!
+
+      <div id="train_arrow"><img src="http://upload.wikimedia.org/wikipedia/en/e/e0/Black_Down_Arrow.png"></div>
+
+    </div>
+  </div>
+</div>
+<script src="js/Game.js"></script>
+</body>
+</html>

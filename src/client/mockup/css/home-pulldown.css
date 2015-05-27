@@ -1,0 +1,83 @@
+.home-pulldown {
+  background-color: rgba(192,192,192,0.2);
+  border-radius: 10px;
+  position: relative;
+  width: 65%;
+  height: 140px;
+  margin: auto;
+  top: -140px;
+  visibility: hidden;
+}
+
+.home-pulldown .progress {
+  margin-left: 5px;
+  position: relative;
+  top: 5px;
+  margin-bottom: 5px;
+  width: 50%;
+}
+
+#pulldown-speed {
+  position: absolute;
+  top: 5px;
+  left: 65%;
+}
+
+#pulldown-sight {
+  position: absolute;
+  top: 30px;
+  left: 65%;
+}
+
+#pulldown-stars {
+  position: absolute;
+  top: 55px;
+  left: 65%;
+}
+
+#pulldown-currency {
+  position: absolute;
+  top: 55px;
+  left: 10%;
+}
+
+.pulldown-icon {
+  width: 20px;
+}
+
+#swipe-up {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  bottom: 0%;
+  left: 45.5%;
+}
+
+#swipe-down {
+  position: absolute;
+  top: 5px;
+  width: 30px;
+  height: 15px;
+  left: 47%;
+  text-align: center;
+}
+
+.home-pulldown .btn {
+  position: absolute;
+  margin-right: 5px;
+  padding: 0px;
+  top: 80px;
+  width: 50%;
+  right: 0%;
+}
+
+.qty {
+  width: 20%;
+}
+
+#adjust-skills{
+  display: none;
+  text-align: right;
+  position: relative;
+  width: 100%;
+}

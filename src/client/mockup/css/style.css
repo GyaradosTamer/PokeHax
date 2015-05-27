@@ -1,0 +1,160 @@
+/* tags */
+h5{
+	font-family: sans-serif;
+}
+
+.invisible{
+	visibility: hidden;
+}
+/* home */
+#home-dog{
+	width: 220px;
+	height: 220px;
+	object-fit: contain;
+	position: absolute;
+	bottom: 200px;
+	left: 200px; /*(width*2)/3*/
+}
+.home-center{
+	position: fixed;
+	top:0px;
+	height: 745px;
+	width: 100%;
+	z-index: -1;
+	background-size: 100% 100%;
+	background-image: url("../assets/homepage/Background.jpg");
+}
+.home-toolbars{
+	position: fixed;
+	bottom: 20px;
+	height: 90px;
+	width: 100%;
+	z-index: 1;
+}
+#home-groom{
+	z-index: 1;
+}
+#home-footer{
+	position: fixed;
+	bottom:0px;
+	left: 0px;
+	height:110px;
+	width:100%;
+	background-color: red;
+	z-index: -1;
+}
+.home-toolbar-details{
+	position: fixed;
+	bottom: 115px;
+	height: 60px;
+	width: 100%;
+    z-index: 5;
+}
+.home-toolbar-details > img{
+	width: 110px;
+	height: 60px;
+	object-fit: contain;
+}
+#home-popup-background{
+	position: fixed;
+	width: 100%;
+	height: 80px;
+	bottom:100px;
+	background-color: #3333FF;
+}
+.home-toolbars-button{
+	display:inline-block;
+}
+.home-toolbars-button > img{
+	width: 110px;
+	height: 90px;
+	object-fit: contain;
+}
+
+#level-select {
+    text-align: center;
+}
+
+#level-select h1 {
+    font-weight: bold;
+    font-size: 36pt;
+    color: #4DBD33;
+}
+
+#level-select-image {
+    width: 110px;
+    height: 110px;
+    object-fit: contain; 
+}
+/* level */
+.level{
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.level-map{
+    margin: 10px auto 15px auto;
+    width: 0px;
+    height: 0px;
+    border: 3px solid #49311c;
+    border-radius: 5px;
+    background-color: #4DBD33;
+}
+.level-stars{
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+	float: right;
+}
+.level-name{
+	display:inline;
+}
+.level-center{
+	text-align: center;
+	display:inline-block;
+	width: 100%;
+}
+.world-panel > .panel-heading{
+    background-color : #4DBD33
+}
+.level-panel > .panel-heading{
+    background-color : #4DBD33;
+}
+.level-panel {
+    text-align: center;
+}
+.panel-body {
+    background-image: url('http://www.favoritefabric.com/fabricm_images/MKWOOFBONEBRN.jpg');
+    background-position: 0px -25px;
+    background-size: 100%;
+    font-size: 16pt;
+}
+.level-description {
+    text-align: center;
+    width: 100%;
+}
+.panel-body ul {
+    text-align: center;
+    display: inline-block;
+}
+.panel-body li {
+    text-align: left;
+    width: 100%;
+}
+.level-buttons{
+	text-align: center;
+}
+.level-buttons > button{
+	display: inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+#dog {
+    background: transparent url(/client/assets/dogsprite.png) 0 0 no-repeat;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    z-index: 2000;
+    position: absolute;
+}

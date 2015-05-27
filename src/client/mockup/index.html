@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>DogShow</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/home-pulldown.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="body">
+      <!-- Pulldown menu starts here -->
+      <div class="home-pulldown">
+        <!-- Progress bar showing fatigue -->
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70"
+              aria-valuemin="0" aria-valuemax="100" style="width:70%">
+            <span>Fatigue</span>
+          </div>
+        </div>
+        <!-- Progress bar showing happiness -->
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="70"
+              aria-valuemin="0" aria-valuemax="100" style="width:70%">
+            <span>Happiness</span>
+          </div>
+        </div>
+        <!-- Label for speed -->
+        <span id="pulldown-speed">Speed: 
+          <span id="pulldown-speed-val">20</span>
+        </span>
+        <!-- Label for sight -->
+        <span id="pulldown-sight">Sight: 
+          <span id="pulldown-sight-val">x2</span>
+        </span>
+        <!-- Label for stars -->
+        <span id="pulldown-stars">
+          <img class="pulldown-icon" src="assets/homepage/star.png">
+          <span id="pulldown-stars-val">2</span>
+        </span>
+        <!-- Label for money -->
+        <span id="pulldown-currency">
+          <img class="pulldown-icon" src="assets/homepage/coin.png">20,000
+        </span>
+        <!-- Button that spawns increase skill dialog box -->
+        <button type="button" class="btn increase-skill btn-success">
+          Increase Skill
+        </button>
+        <!-- Press the swipe up image to retract pullup -->
+        <img id="swipe-up" src="assets/homepage/swipeUp.png">
+      </div>
+      <!-- Press the swipe down image to pull up the header -->
+      <img id="swipe-down" src="assets/homepage/swipeDown.png">
+      
+      <!-- Dialog box that lets you adjust skills -->
+      <div id="adjust-skills">
+        <h4>Increase Name's Skills</h4>
+        <!-- Let's you adjust speed -->
+        <div class="adjust"> Speed:
+          <input type='text' class="qty" name='speed-qty' value='20'>
+          <input type='button' class="qty-button" value='+' field='speed-qty'>
+        </div>
+        <!-- Let's you adjust sight -->
+        <div class="adjust"> Sight:
+          <input type='text' class="qty" name='sight-qty' value='2'>
+          <input type='button' class="qty-button" value='+' field='sight-qty'>
+        </div>
+        <!-- Amount of stars left -->
+        <img class="pulldown-icon" src="assets/homepage/star.png">
+          <span id="adjust-stars">2</span>
+        <br>
+        <!-- Cancellation button -->
+        <button type="button" id="cancel-skill" class="btn btn-danger">
+            Cancel</button>
+        <!-- Confirmation button -->
+        <button type="button" id="confirm-skill" class="btn btn-success">Confirm
+            </button>
+      </div>
+
+      <!-- home-center is defined to display our background -->
+      <div class="home-center">
+        <audio id="woof1">
+          <source src="assets/homepage/woof1.wav" type="audio/wav">
+        </audio>
+        <img src="assets/homepage/DogCartoon.png" id="home-dog">
+      </div>
+      <!-- Div absolutely positioned to the bottom of the screen with divs that
+       may be tapped in order to bring up their corresponding details -->
+      <div class="home-toolbars">
+        <div id="home-food" class="home-toolbars-button">
+          <img src="assets/homepage/foodBowl.png">
+        </div>
+        <div id="home-clothes" class="home-toolbars-button">
+          <img src="assets/homepage/Hanger.png">
+        </div>
+        <div id="home-groom" class="home-toolbars-button">
+          <img src="assets/homepage/combBlack.png">
+        </div>
+        <div id="home-settings" class="home-toolbars-button">
+          <img src="assets/homepage/settings.png">
+        <div id="home-play" class="home-toolbars-button">
+          <!-- Pressing this takes you to the level select page -->
+          <a href="levelselect.html">
+            <img id="level-select-image" src="assets/homepage/play.png">
+          </a>
+        </div>
+        <div id="home-footer"></div>
+      </div>
+      <!-- Divs corresponding to the content of each button. Theses are kept invisible
+      until they are made visible by a jQuery call to removeClass. For now, the
+      divs contain plain images. -->
+      <!-- Images will have to be templatized at some point. -->
+      <div class="home-toolbar-details invisible" id="home-popup-background"></div>
+      <div class="home-toolbar-details invisible" id="home-food-details">
+        <img src="assets/homepage/t-bone.png">
+        <img src="assets/homepage/bacon.png">
+        <img src="assets/homepage/chickenBone.png">
+        <img src="assets/homepage/egg.jpg">
+        <img src="assets/homepage/peanut-butter.png">
+      </div>
+      <div class="home-toolbar-details invisible" id="home-clothes-details">
+        <img src="assets/homepage/redShirt.png">
+        <img src="assets/homepage/topHat.png">
+        <img src="assets/homepage/necklace.jpg">
+        <img src="assets/homepage/redCap.png">
+        <img src="assets/homepage/bow.png">
+      </div>
+      <div class="home-toolbar-details invisible" id="home-groom-details">
+        <img src="assets/homepage/shampoo.png">
+        <img src="assets/homepage/Conditioner.png">
+        <img src="assets/homepage/comb.gif">
+        <img src="assets/homepage/spongeBrush.jpg">
+        <img src="assets/homepage/rinse.gif">
+      </div>
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+  </script>
+  <!-- JQuery library: blockUI. Makes for easy spawning of dialog boxes -->
+  <script src="http://malsup.github.io/jquery.blockUI.js"></script>
+    <!-- Include necessary scripts -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/HomeToolbars.js"></script>
+    <script src="js/Home.js"></script>
+  </body>
+</html>

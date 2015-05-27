@@ -1,0 +1,179 @@
+body {
+	background-image: url('http://www.favoritefabric.com/fabricm_images/MKWOOFBONEBRN.jpg');
+    background-position: 0px 40px;
+    background-size: 100%;
+}
+
+.grid-cell {
+    -webkit-box-sizing: border-box;
+    border: 1px #197319 solid;
+    float: left;
+}
+
+.cell-item {
+    width: 100%;
+}
+
+#grid-parent {
+    height: 500px;
+}
+#grid {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid #49311c;
+    border-radius: 5px;
+}
+#grid div {
+    width: 20%;
+    height: 90px;
+    border-top: 1px #197319 solid;
+    border-left: 1px #197319 solid;
+    float: left;
+}
+
+.bone {
+	background: url('http://images.clipartpanda.com/dog-bone-clipart-dog-bone-clipart.png');
+	background-size: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+
+#grid {
+	margin: 10px auto 15px auto;
+	width: 470px;
+	height: 450px;
+	background-color: #4DBD33;
+}
+
+.dog {
+	width: 100%;
+	margin-top: 15px;
+
+}
+
+#grid .top-wall{
+	border-top: 5px #49311c solid;
+}
+
+#grid .left-wall{
+	border-left: 5px #49311c solid;
+}
+
+#grid .right-wall{
+	border-right: 5px #49311c solid;
+}
+
+#grid .bottom-wall{
+	border-bottom: 5px #49311c solid;
+}
+
+#console {
+    position: relative;
+    border: 3px solid #49311c;
+    border-radius: 4px;
+    width: 75%;
+    height: 125px;
+    margin: 0px auto;
+    padding: 15px;
+    background-color: #fff;
+    font-size: 24pt;
+}
+
+#description {
+    position: absolute;
+    width: 55%;
+    left: 5px;
+}
+
+#dog-head {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#game-misc {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+#console.code {
+	font-size: 18px;
+}
+
+.btn {
+	border: 3px solid #49311c;
+	background-color: #4DBD33;
+	color: #fff;
+}
+
+#nav_menu {
+	margin: 10px;
+}
+
+#nav_menu .btn {
+	width: 50px;
+}
+
+.dog-face-box {
+	height: 100px;
+	width: 150px;
+	margin: 0 20px 0 0;
+	float: right;
+	overflow: hidden;
+}
+
+.dog-face {
+	height: 250px;
+}
+
+#btn-box{
+	width: 75%;
+	margin: 15px auto;
+}
+
+#btn-box .btn{
+	width: 49.5%;
+	height: 60px;
+	font-size: 24pt;
+}
+
+.modal-content {
+	padding: 20px;
+	width: 70%;
+	height: 230px;
+	font-size: 24pt;
+	margin: 63% auto;
+}
+
+#train_arrow{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	top: 200px;
+	right: 10px;
+	overflow: hidden;
+}
+
+#train_arrow img{
+	height: 100%;
+}
+
+.star {
+	width: 60px;
+	height: 60px;
+	float: left;
+	background: url('http://images.clipartpanda.com/star-outline-star-outline-vector-300x271.png');
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.star.filled{
+	background: url('http://images.clipartpanda.com/clipart-star-RTA9RqzTL.png');
+	background-size: 100% 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}

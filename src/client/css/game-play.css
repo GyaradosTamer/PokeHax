@@ -1,0 +1,47 @@
+.grid-cell {
+	-webkit-box-sizing: border-box;
+    border: 1px #197319 solid;
+    float: left;
+}
+
+.cell-item {
+	width: 100%;
+}
+
+#grid {
+	margin: 10px auto 15px auto;
+	width: 470px;
+	height: 470px;
+	background-color: #4DBD33;
+}
+
+.top-wall{
+	border-top: 5px #49311c solid;
+}
+
+.left-wall{
+	border-left: 5px #49311c solid;
+}
+
+.right-wall{
+	border-right: 5px #49311c solid;
+}
+
+.bottom-wall{
+	border-bottom: 5px #49311c solid;
+}
+
+#dog {
+	background: transparent url(/client/assets/dogsprite.png) 0 0 no-repeat;
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	z-index: 2000;
+	position: absolute;
+}
+
+.home-cell {
+	background: url(http://www.homemade-preschool.com/image-files/doghouse.png) no-repeat;
+	background-size: 100%;
+	background-position: center;
+}

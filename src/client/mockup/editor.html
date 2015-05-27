@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/editor.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="/client/js/Code.js"></script>
+		<script src="js/editor.js"></script>
+	</head>
+	<body>
+		<div id="game-view">
+		</div>
+		<div id="editor-view">
+			<!-- Static components of a page -->
+			<div class="grey-out"></div>
+			<div id="for-page-popup" class="popup">
+				<div id="for-page-increment-area">
+					<div class="for-page-popup-text">Do it for</div>
+					<div class="for-popup-left-arrow"></div>
+					<div id="for-popup-count" class="for-page-popup-text">1</div>
+					<div class="for-popup-right-arrow"></div>
+					<div class="for-page-popup-text">time(s)</div>
+				</div>
+				<div id="for-popup-delete">Forget This</div>
+			</div>
+			<div id="condition-popup" class="popup">
+				<div id="condition-popup-conditions">
+					<div id="condition-popup-wallnear" class="condition-code wallnear"></div>
+					<div id="condition-popup-bonenear" class="condition-code bonenear"></div>
+				</div>
+				<div id="condition-popup-delete">Forget This</div>
+			</div>
+			<div class="navbar">
+				<div class="navbar-back"></div>
+				<div class="navbar-title">
+				</div>
+			</div>
+			<div class="map-icon-outer">
+				<div class="map-icon"></div>
+				<div class="map-summary">
+					<img id="minimap"></img>
+					<div id="map-description"></div>
+				</div>
+			</div>
+			<div id="drag-icon" class="action-icon"></div>
+			<div class="code-area">
+				<div class="code-title">
+					<span id="code-title-text"></span>
+				</div>
+				<div id="main-page-block">
+					<div id="main-page-empty-slot" class="nesting page-empty-slot"></div>
+					<div class="main-page-end-buffer"></div>
+				</div>
+			</div>
+			<div id="toolkit-whole">
+				<div class="toolkit-handle">
+					<div id="toolkit-handle-arrow" class="hz-flip"></div>
+				</div>
+				<div class="toolkit-body">
+					<div class="toolkit-tabs">
+						<div class="toolkit-tab">
+							<span class="toolkit-tab-title">Actions</span>
+						</div>
+						<div class="toolkit-tab inactive">
+							<span class="toolkit-tab-title">Pages</span>
+						</div>
+						<div class="toolkit-tab inactive">
+							<span class="toolkit-tab-title">Tricks</span>
+						</div>
+					</div>
+					<div class="toolkit-tab-content">
+						<div id="tab-content-left-arrow" class="hidden"></div>
+						<div id="tab-content-right-arrow"></div>
+						<div id="tab-content-palette">
+							<div id="tab-content-actions" class="palette shown">
+								<div id="palette-item-move" class="palette-item">
+									<div class="icon-move action-icon palette-icon"></div>
+									<div class="palette-item-text">MOVE</div>
+								</div>
+								<div id="palette-item-turn-left" class="palette-item">
+									<div class="icon-turn-left action-icon palette-icon"></div>
+									<div class="palette-item-text">TURN LEFT</div>
+								</div>
+								<div id="palette-item-turn-right" class="palette-item">
+									<div class="icon-turn-right action-icon palette-icon"></div>
+									<div class="palette-item-text">TURN RIGHT</div>
+								</div>
+								<div id="palette-item-pickup" class="palette-item">
+									<div class="icon-pickup action-icon palette-icon"></div>
+									<div class="palette-item-text">PICK UP</div>
+								</div>
+								<div id="palette-item-drop" class="palette-item">
+									<div class="icon-drop action-icon palette-icon"></div>
+									<div class="palette-item-text">DROP</div>
+								</div>
+							</div>
+							<div id="tab-content-pages" class="palette">
+								<div id="palette-item-ifthen" class="palette-item">
+									<div class="icon-ifthen action-icon palette-icon"></div>
+									<div class="palette-item-text">IF/THEN</div>
+								</div>
+								<div id="palette-item-while" class="palette-item">
+									<div class="icon-while action-icon palette-icon"></div>
+									<div class="palette-item-text">WHILE</div>
+								</div>
+								<div id="palette-item-for" class="palette-item">
+									<div class="icon-for action-icon palette-icon"></div>
+									<div class="palette-item-text">FOR</div>
+								</div>
+							</div>
+							<div id="tab-content-tricks" class="palette">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Invoke load script when page is ready -->
+		<script>
+			onLoad();
+		</script>
+	</body>
+</html>

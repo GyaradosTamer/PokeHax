@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<!-- A simple testpage I am using to test function of client side js libs-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="../client/js/lib/jquery.spritely-0.4.js"></script>
+		<script src="../client/js/GameDrawingUtil.js"></script>
+		<script src="../client/js/GridGame.js"></script>
+		<script src="../client/js/Code.js"></script>
+		  <link href="/client/css/game-play.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<div id="grid"></div>
+		<div id="dog"></div>
+		<script>
+
+		// $('#dog')
+		// 		.sprite({fps: 9, no_of_frames: 2}).activeOnClick()
+		// 		.active();
+			
+			// Create pet
+			GridPet.init(1,1,1,1,1);
+			GridPet.setPos({x:2,y:2});
+			// Create world
+			var mapJSON = {};
+			mapJSON.width = 5;
+			mapJSON.height = 5;
+			var square = {
+				background: 0,
+				itemType: 0,
+				hasWall: [false, false, false, false],
+				isEnd: false
+			};
+			mapJSON.board = [];
+			for (var i = 0; i < mapJSON.width; i++) {
+				mapJSON.board[i] = [];
+				for (var j = 0; j < mapJSON.height; j++) {
+					mapJSON.board[i][j] = square;
+				}
+			}
+            var boneSquare = {
+                background: 0,
+                itemType: 1,
+                hasWall: [false, false, false, false],
+                isEnd: false
+            };
+            mapJSON.board[4][2] = boneSquare;
+            console.log("Generating map:");
+            console.log(JSON.stringify(mapJSON));
+			GridBoard.load(mapJSON);
+
+			GameDrawingUtil.renderGrid("#grid", 'cell', GridBoard, GridPet);
+			//Create code
+			var main = new Page(Page.MAIN);
+			var b = new Block(Block.MOVE);
+			main.components.push(b);
+			var it = new Page(Page.IFTHEN);
+			it.condition = new Condition(Condition.AND);
+			it.condition.leftInnerCond = new Condition(Condition.WALL, 2, 0);
+			it.condition.rightInnerCond = new Condition(Condition.NOOBJECTFAR, 3, 2);
+			it.components.push(new Block(Block.TURNLEFT));
+			it.components.push(new Block(Block.MOVE));
+			it.altComponents.push(new Block(Block.TURNRIGHT));
+			it.altComponents.push(new Block(Block.MOVE));
+			main.components.push(it);
+			main.components.push(new Block(Block.TURNRIGHT));
+			var wh = new Page(Page.WHILE);
+			wh.condition = new Condition(Condition.NOWALL, 2, 0);
+			wh.components.push(new Block(Block.MOVE));
+			main.components.push(wh);
+			main.components.push(new Block(Block.TURNRIGHT));
+			main.components.push(b);
+			main.components.push(new Block(Block.PICKUP));
+			console.log('Generated Code:');
+			console.log(main.toCode());
+			console.log('Evaluated Code:');
+			eval(main.toCode());
+			console.log('Generated JSON:');
+			console.log(JSON.stringify(main.toJSON()));
+		</script>
+	</body>
+</html>

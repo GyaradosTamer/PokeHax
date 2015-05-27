@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bone Hunt</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/game.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+  </script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div id="nav_menu">
+  <a type="button" class="btn btn-default" href="./index.html">
+    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+  </a>
+  <a type="button" class="btn btn-default" href="./levelselect.html">
+    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+  </a>
+</div>
+<!-- grid div classes:
+  bone
+  left wall
+  right wall
+  top wall
+  bottom wall
+ -->
+  <div id="grid">
+    <div></div>
+    <div class="bottom-wall right-wall"></div>
+    <div id="2" class="bone"></div>
+    <div id="1"></div>
+    <div id="0"><img class="dog" src="http://images.onlinelabels.com/images/clip-art/molumen/molumen_happy_running_dog.png"/></div>
+    <div class="bone bottom-wall"></div>
+    <div class="right-wall"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="bone left-wall"></div>
+    <div></div>
+    <div></div>
+    <div class="bone"></div>
+    <div class="top-wall"></div>
+    <div class="top-wall"></div>
+    <div></div>
+    <div class="top-wall"></div>
+    <div class="right-wall"></div>
+    <div></div>
+    <div></div>
+    <div class="bone left-wall"></div>
+  </div>
+
+
+
+  <div id="console" class="code">
+    <span id="while"> do this for 5 times </span><br/>
+    <span id="move">&nbsp&nbsp&nbsp&nbsp move</span><br/>
+    <span id="pickup">&nbsp&nbsp&nbsp&nbsp pickUp</span>
+  </div>
+
+  <div id="btn-box">
+    <button type="button" class="btn" id="play-btn">Play</button>
+    <a class="btn" href="./editor.html">Train</a>
+  </div>
+  
+
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="msgModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      Ah! We hit a wall! Maybe<div class="dog-face-box"><img class="dog-face" src="http://www.howtodrawguide.com/wp-content/uploads/image/how-to-draw-animals/how-to-draw-a-dog/1.jpg"/></div>
+      we should try something else?
+
+      <div id="train_arrow"><img src="http://upload.wikimedia.org/wikipedia/en/e/e0/Black_Down_Arrow.png"></div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#play-btn').click(function () {
+    $('#play-btn').text('Pause');
+    (function runLoop (i) {         
+      $("#while").css("background-color","#00ff00");
+      setTimeout(function () {
+        if ( i % 2 == 0 && i <= 4) {
+          var prev = "#" + (i/2 - 1);
+          var id = "#" + i/2;
+          $(prev).html("");
+          $(id).html('<img class="dog" src="http://images.onlinelabels.com/images/clip-art/molumen/molumen_happy_running_dog.png"/>');
+          $("#move").css("background-color", "#fff");
+        } else if (i == 5) {
+          $("#if").css("background-color", "#fff");
+          $("#pickup").css("background-color", "#00ff00");
+          $("#2").attr('class', '');
+        } else if (i == 6) {
+          $("#pickup").css("background-color", "#fff");
+          $("#move").css("background-color", "#ff0000");
+          $("#2").css("background-color","red");
+          $("#while").css("background-color","#fff");
+        }
+        else {
+          console.log("toggled");
+          $("#move").css("background-color", "#00ff00");
+        }        
+        i++;                       
+        if (i <= 6) runLoop(i);     
+      }, 300)
+    })(1);
+    setTimeout(function() {
+      $('#play-btn').text('Play');
+      $("#msgModal").modal('show');
+    }, 2300)
+    
+  })
+</script>
+
+
+</body>
+</html>

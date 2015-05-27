@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Level Select</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/game.css" rel="stylesheet">
+  <link href="/client/css/game-play.css" rel="stylesheet">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.js"></script>
+  <script src="js/handlebars.js"></script>
+  <script src="../js/lib/jquery.spritely-0.4.js"></script>
+  <script src="../js/GameDrawingUtil.js"></script>
+  <script src="../js/GridGame.js"></script>
+  <script src="../js/Code.js"></script>
+</head>
+  <body>
+<div id="nav_menu">
+  <a type="button" class="btn btn-default" href="./index.html">
+    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+  </a>
+  <a type="button" class="btn btn-default" href="./levelselect.html">
+    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+  </a>
+</div>
+
+  <div id="level-select"></div>
+
+  <script type="text/x-handlebars-template" id="level-select-template">
+
+    <h1>Level Select</h1>
+      <!-- outer group, worlds -->
+      <div class="panel-group" id="worlds" role="tablist" 
+          aria-multiselectable="true">
+        {{#each worlds}}
+        <div class="panel panel-default world-panel">
+          <div class="panel-heading" role="tab" id="heading{{ this._id }}">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#worlds" 
+                  href="#worlds{{ this._id }}" 
+                  aria-expanded="true" aria-controls="world{{ world }}">
+                <div class="pie-chart">Pie</div>
+                <div class="world-name">{{ this._name }}</div>
+              </a>
+            </h4>
+          </div>
+          <div id="worlds{{ this._id }}" class="panel-collapse collapse in" 
+              role="tabpanel" aria-labelledby="heading{{ this._id }}">
+            <div class="panel-body">
+            <div id="world{{ this._id }}" class="panel-group" role="tablist" aria-multiselectable="true">
+        {{#each _levels}}
+        <div class="panel panel-default level-panel">
+          <div class="panel-heading" role="tab" id="lheading{{ this._id }}">
+            <h4 class="panel-title">
+              <a class="collapsed level-click" data-toggle="collapse" 
+                  data-parent="#world{{ this._world }}" href="#level{{ this._id }}"
+                  aria-expanded="false" aria-controls="level{{ this._id }}">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                <h5 class="level-name">{{ this._name }}</h5>
+                <img src="assets/levelselect/2stars.png" class="level-stars">
+              </a>
+            </h4>
+          </div>
+          <div id="level{{ this._id }}" class="panel-collapse collapse level" role="tabpanel"
+          aria-labelledby="lheading{{ this._id }}">
+            <div class="level-center">
+              <p id="level-description{{this._id}}" class="level-description">
+                {{ this._description}}
+              </p>
+              <ul>
+                <li>Get Home</li>
+                <li>No for loops</li>
+                <li>Go under ten lines</li>
+              </ul>
+            </div>
+            <div id="board{{this._id}}" class="level-map"></div>
+            <div class="level-buttons">
+              <a href="game.html">
+                <button type="button" class="btn btn-lg">Play!</button>
+              </a>
+              <button type="button" class="btn btn-lg">Challenge!</button>
+              {{#if this._isTrick}}
+              {{else }}
+                <button type="button" class="btn btn-lg">Reset!</button>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+        <div id="dog" style="display:none"></div>
+    </div>
+
+  </script>
+  <script src="js/LevelSelect.js"></script>
+    <script>
+      LevelSelect.render();
+      //LevelSelect.solutionTest();
+    </script>
+</body>
+</html> 
